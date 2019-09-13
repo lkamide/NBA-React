@@ -19,8 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "test": "test --passWithNoTests"
+    "eject": "react-scripts eject"
+    
   },
   
     "devDependencies": {
