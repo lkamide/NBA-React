@@ -1,47 +1,36 @@
 language: node_js
-node_js:
-  - "8"
 
-dist: xenial
-services:
-  - xvfb
+matrix:
+  include:
+    - os: linux
+      node_js: '7'
+      sudo: required
+      env: DISPLAY=':99.0'
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - google-chrome
+          packages:
+            - google-chrome-stable
+    - os: osx
+      node_js: '7'
+      sudo: required
+      env: HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-  before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-  - rackup  # start a Web server
-  - sleep 3 # give Web server some time to bind to sockets, etc
-
-  script: xvfb-run make test
-  script: xvfb-run --server-args="-screen 0 1024x768x24" make test
-
-  before_install:
-  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-
-
-  dist: trusty
-addons:
-  chrome: stable
 before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  ⋮
+  - |
+    if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      brew update > /dev/null
+      brew cask install google-chrome
+    fi
+install:
+  - npm install
 
-
-
-# addons: # get google-chrome-stable
-#   chrome: stable
-# install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
-#   - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
-#   - unzip ~/chromedriver_linux64.zip -d ~/
-#   - rm ~/chromedriver_linux64.zip
-#   - sudo mv -f ~/chromedriver /usr/local/share/
-#   - sudo chmod +x /usr/local/share/chromedriver
-#   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-  
-#   script:
-#   - whereis google-chrome-stable
-#   - whereis chromedriver
-
-  
+before_script:
+  - |
+    if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      sh -e /etc/init.d/xvfb start
+    fi
+script:
+  - npm test
