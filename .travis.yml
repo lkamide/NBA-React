@@ -7,22 +7,22 @@ sudo: required
 
 
 
-env:
-  global:
-    - CXX=g++-4.8
-    - DISPLAY=:99.0
-    - CHROME_BIN=/usr/bin/google-chrome
-# installing Chrome for e2e tests
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-      - oracle-java9-set-default
-
+# env:
+#   global:
+#     - CXX=g++-4.8
+#     - DISPLAY=:99.0
+#     - CHROME_BIN=/usr/bin/google-chrome
+# # installing Chrome for e2e tests
 # addons:
-  # chrome: stable
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - google-chrome-stable
+#       - oracle-java9-set-default
+
+addons:
+  chrome: stable
 # before_install:
 #   - # start your web application and listen on `localhost`
 #   - google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -47,12 +47,11 @@ before_script:
   # - sleep 3 # give Web server some time to bind to sockets, etc
   # - chrome -v 
   
-
-script: npm test
-
-
 before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 #wait a while before xvfb to start
+
+script: npm test
+
 after_script:
   - "sh -e /etc/init.d/xvfb stop"
