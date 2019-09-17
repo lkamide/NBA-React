@@ -8,6 +8,7 @@ let chrome = require('selenium-webdriver/chrome');
 
   var chromeOptions = new chrome.Options();
     chromeOptions.addArguments("--no-sandbox");
+    chromeOptions.addArguments("--headless");
     chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
     chromeOptions.addArguments("test-type");
     chromeOptions.addArguments("start-maximized");
@@ -17,7 +18,6 @@ let chrome = require('selenium-webdriver/chrome');
     chromeOptions.addArguments("--disable-popup-blocking");
     chromeOptions.addArguments("--disable-default-apps");
     chromeOptions.addArguments("--disable-infobars");
-    chromeOptions.addArguments("--headless");
     chromeOptions.addArguments("--disable-dev-shm-usage");
     
 
