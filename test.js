@@ -7,12 +7,12 @@ let chrome = require('selenium-webdriver/chrome');
   // chromeOptions.addArguments("--blink-settings=imagesEnabled=false");
 
   var chromeOptions = new chrome.Options();
+    chromeOptions.addArguments("--no-sandbox");
     chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
     chromeOptions.addArguments("test-type");
     chromeOptions.addArguments("start-maximized");
     chromeOptions.addArguments("--js-flags=--expose-gc");
     chromeOptions.addArguments("--single-process");
-    chromeOptions.addArguments("--no-sandbox");
     chromeOptions.addArguments("--enable-precise-memory-info");
     chromeOptions.addArguments("--disable-popup-blocking");
     chromeOptions.addArguments("--disable-default-apps");
