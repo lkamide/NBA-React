@@ -22,11 +22,7 @@ let chrome = require('selenium-webdriver/chrome');
     // firefoxOptions.addArguments("--disable-dev-shm-usage");
 
 
-
-  
-  try {
-
-    var chromeOptions = new chrome.Options();
+  var chromeOptions = new chrome.Options();
     chromeOptions.addArguments("--no-sandbox");
     chromeOptions.addArguments("--headless");
     // chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
@@ -45,7 +41,8 @@ let chrome = require('selenium-webdriver/chrome');
   .forBrowser('chrome')
   .setChromeOptions(chromeOptions)
   .build();
-
+  
+  try {
     await driver.get('http://www.google.com/ncr');
     await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
     await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
