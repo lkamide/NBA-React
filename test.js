@@ -1,21 +1,12 @@
-const webdriver = require("selenium-webdriver");
-const chrome = require("selenium-webdriver/chrome");
-const chromedriver = require("chromedriver");
-
-const until = webdriver.until;
-const By = webdriver.By;
-
-const options = new chrome.Options();
-options.addArguments("no-sandbox");
-
-const builder = new webdriver.Builder();
-builder.forBrowser("chrome");
-builder.setChromeOptions(options);
-
-const driver = builder.build();
-(async () => {
-    await driver.get("https://tweetdeck.twitter.com");
-    await driver.wait(until.titleIs("TweetDeck"));
-    const login = await driver.findElement(By.css("form.form-login a.btn"));
-    await login.click();
+const {Builder, By, Key, until} = require('selenium-webdriver');
+ 
+(async function example() {
+  let driver = await new Builder().forBrowser('chrome').build();
+  try {
+    await driver.get('http://www.google.com/ncr');
+    await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+  } finally {
+    await driver.quit();
+  }
 })();
