@@ -7,6 +7,7 @@ let chrome = require('selenium-webdriver/chrome');
   // chromeOptions.addArguments("--blink-settings=imagesEnabled=false");
 
   var chromeOptions = new chrome.Options();
+    chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData')
     chromeOptions.addArguments("test-type");
     chromeOptions.addArguments("start-maximized");
     chromeOptions.addArguments("--js-flags=--expose-gc");
