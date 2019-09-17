@@ -1,5 +1,7 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let chrome = require('selenium-webdriver/chrome');
+const {log} = console
+
 (async function example() {
   //   const chromeOptions = new chrome.Options();
   // chromeOptions.addArguments("--blink-settings=imagesEnabled=false");
@@ -23,7 +25,19 @@ let chrome = require('selenium-webdriver/chrome');
     await driver.get('http://www.google.com/ncr');
     await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
     await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-  } finally {
+  
+  log('---------')
+  log('111111111')
+  log('---------')
+  }catch(err){
+    log('---------')
+    log('Nao Passou')
+    log(err)
+    log('---------')
+  }finally {
     await driver.quit();
+    log('---------')
+    log('Finalllll')
+    log('---------')
   }
 })();
