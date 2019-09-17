@@ -18,6 +18,8 @@ let chrome = require('selenium-webdriver/chrome');
     chromeOptions.addArguments("--disable-default-apps");
     chromeOptions.addArguments("--disable-infobars");
     chromeOptions.addArguments("--headless");
+    chromeOptions.addArguments("--disable-dev-shm-usage");
+    
 
   let driver = await new Builder()
   .forBrowser('chrome')
