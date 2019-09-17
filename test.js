@@ -1,15 +1,31 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let chrome = require('selenium-webdriver/chrome');
+// let firefox = require('selenium-webdriver/firefox')
 
 
 (async function example() {
-  //   const chromeOptions = new chrome.Options();
-  // chromeOptions.addArguments("--blink-settings=imagesEnabled=false");
+    // const chromeOptions = new chrome.Options();
+    //   chromeOptions.addArguments("--blink-settings=imagesEnabled=false");
+  // var firefoxOptions = new firefox.Options();
+
+  //   firefoxOptions.adaddArguments("--no-sandbox");
+  //   firefoxOptions.addArguments("--headless");
+    // // firefoxOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
+    // firefoxOptions.addArguments("test-type");
+    // firefoxOptions.addArguments("start-maximized");
+    // firefoxOptions.addArguments("--js-flags=--expose-gc");
+    // firefoxOptions.addArguments("--single-process");
+    // firefoxOptions.addArguments("--enable-precise-memory-info");
+    // firefoxOptions.addArguments("--disable-popup-blocking");
+    // firefoxOptions.addArguments("--disable-default-apps");
+    // firefoxOptions.addArguments("--disable-infobars");
+    // firefoxOptions.addArguments("--disable-dev-shm-usage");
+
 
   var chromeOptions = new chrome.Options();
     chromeOptions.addArguments("--no-sandbox");
     chromeOptions.addArguments("--headless");
-    chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
+    // chromeOptions.setChromeBinaryPath('/home/travis/build/lkamide/NBA-React/chromeData/chromedriver')
     chromeOptions.addArguments("test-type");
     chromeOptions.addArguments("start-maximized");
     chromeOptions.addArguments("--js-flags=--expose-gc");
