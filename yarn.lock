@@ -2335,10 +2335,10 @@ chrome-trace-event@^1.0.2:
   dependencies:
     tslib "^1.9.0"
 
-chromedriver@^2.27.3:
-  version "2.46.0"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.46.0.tgz#3d78e7eb9bb65dd804fe327a6bf76fced12be053"
-  integrity sha512-dLtKIJW3y/PuFrPmcw6Mb8Nh+HwSqgVrK1rWgTARXhHfWvV822X2VRkx2meU/tg2+YQL6/nNgT6n5qWwIDHbwg==
+chromedriver@74:
+  version "74.0.0"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-74.0.0.tgz#a060308ac858918aa445efb85428ee25dfc76183"
+  integrity sha512-xXgsq0l4gVTY9X5vuccOSVj/iEBm3Bf5MIwzSAASIRJagt4BlWw77SxQq1f4JAJ35/9Ys4NLMA/kWFbd7A/gfQ==
   dependencies:
     del "^3.0.0"
     extract-zip "^1.6.7"
@@ -3596,13 +3596,6 @@ eslint-scope@^5.0.0:
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
-
-eslint-utils@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.4.1.tgz#73f99ce55beebe4d956bfe51cb087bab2399fd9e"
-  integrity sha512-mRQKp/gEImJj7aP2be4F0cIQMxlgY9em9RFtxDmkwqV3cUKCK/mvso36wGQFJCNnrBKrEMBZkOLDrMSM+BpG3A==
-  dependencies:
-    eslint-visitor-keys "^1.0.0"
 
 eslint-utils@^1.3.1, eslint-utils@^1.4.2:
   version "1.4.2"

@@ -19,20 +19,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
-    ,"pretest":"npm  i"
-    ,"test": "node ./test.js",
+    "eject": "react-scripts eject",
+    "pretest": "npm  i",
+    "test": "node ./test.js",
     "webdriver-start": "webdriver-manager start &",
     "webdriver-update": "webdriver-manager update",
     "protractor": "protractor",
     "ci-e2e": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox protractor.conf.js"
   },
-  
-    "devDependencies": {
-      "chromedriver": "^2.27.3",
-      "selenium-webdriver": "^3.1.0"
-    },
-  
+  "devDependencies": {
+    "chromedriver": "74",
+    "selenium-webdriver": "^3.1.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
