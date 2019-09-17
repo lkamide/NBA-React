@@ -11,6 +11,8 @@ let chrome = require('selenium-webdriver/chrome');
     chromeOptions.addArguments("test-type");
     chromeOptions.addArguments("start-maximized");
     chromeOptions.addArguments("--js-flags=--expose-gc");
+    chromeOptions.addArguments("--single-process");
+    chromeOptions.addArguments("--no-sandbox");
     chromeOptions.addArguments("--enable-precise-memory-info");
     chromeOptions.addArguments("--disable-popup-blocking");
     chromeOptions.addArguments("--disable-default-apps");
