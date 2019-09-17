@@ -1,6 +1,6 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 let chrome = require('selenium-webdriver/chrome');
-const {log} = console
+
 
 (async function example() {
   //   const chromeOptions = new chrome.Options();
@@ -26,18 +26,18 @@ const {log} = console
     await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
     await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
   
-  log('---------')
-  log('111111111')
-  log('---------')
+  console.log('---------')
+  console.log('111111111')
+  console.log('---------')
   }catch(err){
-    log('---------')
-    log('Nao Passou')
-    log(err)
-    log('---------')
+    console.log('---------')
+    console.log('Nao Passou')
+    console.log(err)
+    console.log('---------')
   }finally {
     await driver.quit();
-    log('---------')
-    log('Finalllll')
-    log('---------')
+    console.log('---------')
+    console.log('Finalllll')
+    console.log('---------')
   }
 })();
