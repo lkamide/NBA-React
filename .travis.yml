@@ -21,8 +21,15 @@ sudo: required
 #       - google-chrome-stable
 #       - oracle-java9-set-default
 
+# addons:
+#   chrome: stable
+
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 before_install:
 #   - # start your web application and listen on `localhost`
@@ -36,8 +43,8 @@ before_install:
   - PATH=$PATH:/home/travis/build/lkamide/NBA-React/chromeData
   - echo $PATH
   -  google-chrome --version
-  - sudo apt-get install google-chrome-stable
-  -  google-chrome --version
+  # - sudo apt-get install google-chrome-stable
+  # -  google-chrome --version
 
 #   - ls /
 
