@@ -2,7 +2,7 @@ language: node_js
 dist: trusty
 node_js:
   - "8.14.1"
-sudo: required
+sudo: false
 
 # os: osx
 
@@ -21,8 +21,13 @@ sudo: required
 #       - google-chrome-stable
 #       - oracle-java9-set-default
 
+# addons:
+#   google-chrome: stable
+
 addons:
-  google-chrome: stable
+  apt:
+    packages:
+      - google-chrome-stable
 
 before_install:
 #   - # start your web application and listen on `localhost`
