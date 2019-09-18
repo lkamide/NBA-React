@@ -22,7 +22,7 @@ sudo: required
 #       - oracle-java9-set-default
 
 addons:
-  chrome: stable
+  google-chrome: stable
 
 before_install:
 #   - # start your web application and listen on `localhost`
@@ -37,7 +37,7 @@ before_install:
   -  echo $PATH
   -  google-chrome --version
   -  sudo apt-get update -y 
-  -  sudo apt-get install google-chrome-stable
+  # -  sudo apt-get install google-chrome-stable
   # -  sudo apt-get upgrade -y 
   -  google-chrome --version
 
