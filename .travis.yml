@@ -35,7 +35,7 @@ before_install:
 #   - export CHROME_BIN=chromium-browser    
   - PATH=$PATH:/home/travis/build/lkamide/NBA-React/chromeData
   - echo $PATH
-#   # -  google-chrome -v
+  -  google-chrome --version
 #   - ls /
 
 
