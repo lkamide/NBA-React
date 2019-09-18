@@ -21,15 +21,9 @@ sudo: false
 #       - google-chrome-stable
 #       - oracle-java9-set-default
 
-# addons:
-#   google-chrome: stable
-
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  google-chrome: stable
+
 
 before_install:
 #   - # start your web application and listen on `localhost`
@@ -62,6 +56,7 @@ before_install:
 #   # - chrome -v 
   
 before_script:
+  - chromedriver-update 73.0.3683.68
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 #wait a while before xvfb to start
 
