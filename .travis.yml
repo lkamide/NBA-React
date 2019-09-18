@@ -29,7 +29,7 @@ sudo: required
 
 before_install:
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - dpkg -i google-chrome-stable_current_amd64.deb
 # #   - # start your web application and listen on `localhost`
 #   - google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 #   # - wget https://chromedriver.storage.googleapis.com/78.0.3904.11/chromedriver_linux64.zip
