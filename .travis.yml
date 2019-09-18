@@ -25,22 +25,27 @@ sudo: required
 #   chrome: beta
 
 
+
+
 before_install:
-#   - # start your web application and listen on `localhost`
-  - google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  - wget https://chromedriver.storage.googleapis.com/78.0.3904.11/chromedriver_linux64.zip
-  - mkdir chromeData
-  - unzip chromedriver_linux64.zip -d ./chromeData
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+# #   - # start your web application and listen on `localhost`
+#   - google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+#   # - wget https://chromedriver.storage.googleapis.com/78.0.3904.11/chromedriver_linux64.zip
+#   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#   - mkdir chromeData
+#   - unzip chromedriver_linux64.zip -d ./chromeData
   # - ls
-#   - pwd
-#   - export CHROME_BIN=chromium-browser    
-  -  PATH=$PATH:/home/travis/build/lkamide/NBA-React/chromeData
-  -  echo $PATH
+# #   - pwd
+# #   - export CHROME_BIN=chromium-browser    
+#   -  PATH=$PATH:/home/travis/build/lkamide/NBA-React/chromeData
+#   -  echo $PATH
   -  google-chrome --version
-  -  sudo apt-get update -y 
-  # -  sudo apt-get install google-chrome-stable
-  # -  sudo apt-get upgrade -y 
-  -  google-chrome --version
+#   -  sudo apt-get update -y 
+#   # -  sudo apt-get install google-chrome-stable
+#   # -  sudo apt-get upgrade -y 
+#   -  google-chrome --version
 
 #   - ls /
 
