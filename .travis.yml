@@ -36,6 +36,9 @@ before_install:
   - PATH=$PATH:/home/travis/build/lkamide/NBA-React/chromeData
   - echo $PATH
   -  google-chrome --version
+  - sudo apt-get install google-chrome-stable
+  -  google-chrome --version
+
 #   - ls /
 
 
