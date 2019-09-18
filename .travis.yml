@@ -22,7 +22,7 @@ sudo: false
 #       - oracle-java9-set-default
 
 addons:
-  google-chrome: stable
+  chrome: beta
 
 
 before_install:
@@ -56,7 +56,7 @@ before_install:
 #   # - chrome -v 
   
 before_script:
-  - google-chrome-update 73.0.3683.68
+  # - google-chrome-update 73.0.3683.68
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 #wait a while before xvfb to start
 
